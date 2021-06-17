@@ -45,7 +45,7 @@ float2 calculateScreenUVs(int projectionType, float3 posWorld, float2 meshUV, fl
 		case PROJECTION_WALLS: {
 			float3 rd = normalize(posWorld - _WorldSpaceCameraPos);
 			float bot = dot(rd, float3(1, 0, 0));
-			bot = sign(bot) * max(abs(bot), 3e-3);
+			bot = sign(bot) * max(abs(bot), 0.03);
 			screenSpaceOverlayUV = (rd / bot).yz;
 			break;
 		}
